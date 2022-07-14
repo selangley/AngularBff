@@ -30,7 +30,6 @@
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     <None Include="ClientApp\package.json" />
-    <None Include="ClientApp\public\manifest.json" />
     <None Remove="Properties\launchSettings.json" />
     <None Include="Properties\launchSettings.json" />
   </ItemGroup>
