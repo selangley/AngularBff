@@ -1,0 +1,66 @@
+
+<div className="banner">
+  <h1>TODOs</h1>
+</div>
+
+<p *ngIf="!todos"><em>Loading...</em></p>
+
+<div className="row">
+  <div className="col">
+    <h3>Add New</h3>
+  </div>
+  <div className="form-inline">
+    <label htmlFor="date">Todo Date</label>
+    <input className="form-control"
+           type="date"
+           [(ngModel)]="todoDate"
+    />
+    <label htmlFor="name">Todo Name</label>
+    <input className="form-control"
+           [(ngModel)]="todoName"
+    />
+    <button className="form-control btn-success"
+            (click)="createTodo">
+      Create
+    </button>
+  </div>
+</div>
+
+<div *ngIf="error" className="row">
+  <div className="col">
+    <div className="alert alert-warning hide">
+      <strong>Error: </strong>
+      <span>{{error}}</span>
+    </div>
+  </div>
+</div>
+
+<div className="row">
+  <table className="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Note</th>
+        <th>User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos">
+        <td>
+          <button (click)="deleteTodo(todo.id)"
+            className="btn btn-danger"
+            >
+            delete
+          </button>
+        </td>
+        <td>{{todo.id}}</td>
+        <td>{{todo.date}}</td>
+        <td>{{todo.note}}</td>
+        <td>{{todo.user}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

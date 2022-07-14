@@ -32,11 +32,25 @@
     <None Include="ClientApp\package.json" />
     <None Remove="Properties\launchSettings.json" />
     <None Include="Properties\launchSettings.json" />
+    <None Remove="ClientApp\.angular\**" />
+    <Content Remove="ClientApp\.angular\**" />
+    <None Remove="ClientApp\.vscode\**" />
+    <Content Remove="ClientApp\.vscode\**" />
   </ItemGroup>
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Pages\Error.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ClientApp\.angular\**" />
+    <Compile Remove="ClientApp\.vscode\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="ClientApp\.angular\**" />
+    <EmbeddedResource Remove="ClientApp\.vscode\**" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
