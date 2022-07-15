@@ -75,7 +75,8 @@
               "browserTarget": "AngularBff:build:production"
             },
             "development": {
-              "browserTarget": "AngularBff:build:development"
+              "browserTarget": "AngularBff:build:development",
+              "proxyConfig": "proxy.conf.js"
             }
           },
           "defaultConfiguration": "development"
