@@ -16,6 +16,9 @@ export class NavMenuComponent {
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string){
     http.get<Claim[]> (baseUrl + 'bff/user', { headers: {"X-CSRF": "1"}} ).subscribe(
       result => {
+
+        // TODO: I guess I need to subscribe "better" to calls to 'bff/user' so that I update the logoutUrl after every login success and not just during component construction.
+
         const logoutUrl = result.find((claim) => claim.type === "bff:logout_url")?.value ?? this.logoutUrl;
       },
       error => {

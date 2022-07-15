@@ -1,4 +1,4 @@
-namespace AspNetCoreAngularNoIdentity
+namespace AngularBff
 {
     public class WeatherForecast
     {
